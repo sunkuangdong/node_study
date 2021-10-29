@@ -1,16 +1,16 @@
 const childProcessDemo = require('child_process')
 const {
-    execFile
+    spawn
 } = childProcessDemo
 
 const userInput = '.'
 
-execFile('ls', ['-la', userInput], {
-    cwd: 'edz',
-    maxBuffer: 1024 * 1024 // 缓存多大
-}, (err, stdout) => {
-    console.log("err")
-    console.log(err)
-    console.log("stdout")
-    console.log(stdout)
+const streams = spawn('ls', ['-la', userInput], {
+    env: {
+        NODE_ENV: 'development'
+    }
+})
+
+streams.stdout.on('data', (chunk) => {
+    console.log(chunk.toString())
 })
