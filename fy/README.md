@@ -1,7 +1,24 @@
-### install
-#### npm i -g fy-sun
+## install
+``` 
+npm i -g fy-sun
+```
 
 
-### use
-#### fy hello
-#### fy 你好
+## use
+```
+fy hello
+// or
+fy 你好
+```
+
+
+## publish
+
+```
+nrm use npm
+
+npm adduser
+
+npm publish
+
+```
